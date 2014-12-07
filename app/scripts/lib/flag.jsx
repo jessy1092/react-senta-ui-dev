@@ -1,8 +1,8 @@
 var React = require('react');
 
-var defaultClassName = 'icon ';
+var defaultClassName = 'flag ';
 
-var Icon = React.createClass({
+var Flag = React.createClass({
 
   propTypes: {
     className: React.PropTypes.string
@@ -16,4 +16,4 @@ var Icon = React.createClass({
   }
 });
 
-module.exports = Icon;
+module.exports = Flag;

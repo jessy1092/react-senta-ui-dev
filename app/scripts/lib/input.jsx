@@ -1,8 +1,8 @@
 var React = require('react');
 
-var defaultClassName = 'ui segment ';
+var defaultClassName = 'ui input ';
 
-var Segment = React.createClass({
+var Input = React.createClass({
 
   propTypes: {
     className: React.PropTypes.string
@@ -17,4 +17,4 @@ var Segment = React.createClass({
   }
 });
 
-module.exports = Segment;
+module.exports = Input;
