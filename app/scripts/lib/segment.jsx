@@ -1,8 +1,8 @@
 var React = require('react');
 
-var defaultClassName = 'ui button ';
+var defaultClassName = 'ui segment ';
 
-var Button = React.createClass({
+var Segment = React.createClass({
 
   propTypes: {
     className:  React.PropTypes.string
@@ -17,4 +17,4 @@ var Button = React.createClass({
   }
 });
 
-module.exports = Button;
+module.exports = Segment;
