@@ -1,8 +1,11 @@
 var React = require('react');
+var ClassGenerator = require('../mixins/classGenerator.js');
 
-var defaultClassName = 'ui segment ';
+var defaultClassName = 'ui segment';
 
 var Segment = React.createClass({
+
+  mixins: [ClassGenerator],
 
   propTypes: {
     className: React.PropTypes.string
@@ -10,7 +13,7 @@ var Segment = React.createClass({
 
   render: function () {
     return (
-      <div className={defaultClassName + this.props.className}>
+      <div className={this.getClassName(defaultClassName)}>
         {this.props.children}
       </div>
     );

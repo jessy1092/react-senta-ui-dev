@@ -1,8 +1,11 @@
 var React = require('react');
+var ClassGenerator = require('../mixins/classGenerator.js');
 
-var defaultClassName = 'flag ';
+var defaultClassName = 'flag';
 
 var Flag = React.createClass({
+
+  mixins: [ClassGenerator],
 
   propTypes: {
     className: React.PropTypes.string
@@ -10,7 +13,7 @@ var Flag = React.createClass({
 
   render: function () {
     return (
-      <i className={defaultClassName + this.props.className}>
+      <i className={this.getClassName(defaultClassName)}>
       </i>
     );
   }

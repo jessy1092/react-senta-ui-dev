@@ -1,8 +1,11 @@
 var React = require('react');
+var ClassGenerator = require('../mixins/classGenerator.js');
 
-var defaultClassName = 'ui header ';
+var defaultClassName = 'ui header';
 
 var Header = React.createClass({
+
+  mixins: [ClassGenerator],
 
   propTypes: {
     className: React.PropTypes.string
@@ -10,7 +13,7 @@ var Header = React.createClass({
 
   render: function () {
     return (
-      <div className={defaultClassName + this.props.className}>
+      <div className={this.getClassName(defaultClassName)}>
         {this.props.children}
       </div>
     );
