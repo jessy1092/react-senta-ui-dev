@@ -1,20 +1,29 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
+var ColorSelector = require('../mixins/colorSelector.js');
+var Unit = require('./unit.jsx');
 
 var defaultClassName = 'icon';
 
 var Icon = React.createClass({
 
-  mixins: [ClassGenerator],
+  mixins: [ClassGenerator, ColorSelector],
 
   propTypes: {
-    className: React.PropTypes.string
+    onClick: React.PropTypes.func
   },
 
   render: function () {
+
+    var {className, color, ...other} = this.props;
+
     return (
-      <i className={this.getClassName(defaultClassName)}>
-      </i>
+      <Unit {...other}
+        className={this.getClassName(defaultClassName)}
+        type="icon"
+        color={this.getColor()}
+        onClick={this.props.onClick}>
+      </Unit>
     );
   }
 });

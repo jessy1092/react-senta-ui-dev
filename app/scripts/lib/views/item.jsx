@@ -1,36 +1,26 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
+var TypeSelector = require('../mixins/typeSelector.js');
+var Unit = require('../elements/unit.jsx');
 
 var defaultClassName = 'item';
 
 var Item = React.createClass({
 
-  mixins: [ClassGenerator],
-
-  propTypes: {
-    className: React.PropTypes.string,
-    type: React.PropTypes.string
-  },
+  mixins: [ClassGenerator, TypeSelector],
 
   render: function () {
 
-    switch (this.props.type) {
+    var {className, type, ...other} = this.props;
 
-      case 'link':
-        return (
-          <a className={this.getClassName(defaultClassName)}>
-            {this.props.children}
-          </a>
-        );
-
-      case 'div':
-      default:
-        return (
-          <div className={this.getClassName(defaultClassName)}>
-            {this.props.children}
-          </div>
-        );
-    }
+    return (
+      <Unit {...other}
+        className={this.getClassName(defaultClassName)}
+        type={this.getType()}
+        color="null">
+        {this.props.children}
+      </Unit>
+    );
   }
 });
 

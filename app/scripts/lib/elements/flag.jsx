@@ -1,5 +1,6 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
+var Unit = require('./unit.jsx');
 
 var defaultClassName = 'flag';
 
@@ -8,13 +9,20 @@ var Flag = React.createClass({
   mixins: [ClassGenerator],
 
   propTypes: {
-    className: React.PropTypes.string
+    onClick: React.PropTypes.func
   },
 
   render: function () {
+
+    var {className, ...other} = this.props;
+
     return (
-      <i className={this.getClassName(defaultClassName)}>
-      </i>
+      <Unit {...other}
+        className={this.getClassName(defaultClassName)}
+        type="icon"
+        color="null"
+        onClick={this.props.onClick} >
+      </Unit>
     );
   }
 });

@@ -6,6 +6,8 @@ require! <[child_process]>
 exec = child_process.exec
 app = express!
 build_path = '_public'
+reactifyES6 = (file) ->
+  reactify file, {+es6}
 
 gulp.task 'html', ->
   gulp.src './app/views/*.html'
@@ -48,7 +50,7 @@ gulp.task 'test',<[browserify:test]>, (callback)->
 
 gulp.task 'browserify', ->
   browserify './app/scripts/app.jsx'
-    .transform reactify
+    .transform reactifyES6
     .bundle!
     .pipe vinyl-source-stream 'bundle.js'
     .pipe gulp.dest "#{build_path}/scripts/"

@@ -1,11 +1,13 @@
 var Button = require('./index.js').Button;
 var Header = require('./index.js').Header;
 var Content = require('./index.js').Content;
+var Flag = require('./index.js').Flag;
 var Icon = require('./index.js').Icon;
 var Input = require('./index.js').Input;
 var Label = require('./index.js').Label;
 var List = require('./index.js').List;
 var Item = require('./index.js').Item;
+var Items = require('./index.js').Items;
 var Divider = require('./index.js').Divider;
 var Segment = require('./index.js').Segment;
 var React = require('react');
@@ -19,18 +21,19 @@ var HelloBox = React.createClass({
   render: function () {
     return (
       <Segment>
-        <Button className="red">
+        <Button color="red">
           <Icon className="alarm" />
         </Button>
         <Divider />
-        <Button className="blue 123" onClick={this.hello}>
+        <Button color="blue" onClick={this.hello}>
           <Icon className="cloud" />
         </Button>
+        <Flag className="tw" onClick={this.hello}/>
         <Header>
-          <Icon className="cloud" />
+          <Icon className="cloud" color="red" />
           <Content>
             Header Test
-            <Header className="sub">
+            <Header className="sub" color="red">
               sub test
             </Header>
           </Content>
@@ -52,13 +55,13 @@ var HelloBox = React.createClass({
           </Item>
           <Item>
             <Icon className="alarm" />
-            <Header>Hello123</Header>
+            <Header test="132321">Hello123</Header>
           </Item>
         </List>
-        <List className="link">
-          <Item type="link" className="active">123</Item>
-          <Item type="link">321</Item>
-        </List>
+        <Items className="link">
+          <Item>123</Item>
+          <Item>321</Item>
+        </Items>
       </Segment>
     );
   }
