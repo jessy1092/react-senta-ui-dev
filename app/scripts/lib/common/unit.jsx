@@ -11,20 +11,26 @@ var Unit = React.createClass({
 
   render: function () {
 
-    var {className, type, color, onClick, ...other} = this.props;
+    var {className, type, color, onClick, value, ...other} = this.props;
 
     switch (type) {
 
       case 'link':
         return (
-          <a {...other} className={this._generateClassName()} onClick={this._onClick}>
+          <a {...other}
+            className={this._generateClassName()}
+            onClick={this._onClick}
+            data-value={value} >
             {this.props.children}
           </a>
         );
 
       case 'icon':
         return (
-          <i className={this._generateClassName()} onClick={this._onClick}>
+          <i {...other}
+            className={this._generateClassName()}
+            onClick={this._onClick}
+            data-value={value} >
             {this.props.children}
           </i>
         );
@@ -32,7 +38,10 @@ var Unit = React.createClass({
       case 'div':
       default:
         return (
-          <div className={this._generateClassName()} onClick={this._onClick}>
+          <div {...other}
+            className={this._generateClassName()}
+            onClick={this._onClick}
+            data-value={value} >
             {this.props.children}
           </div>
         );

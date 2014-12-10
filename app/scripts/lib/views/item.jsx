@@ -17,7 +17,8 @@ var Item = React.createClass({
       <Unit {...other}
         className={this.getClassName(defaultClassName)}
         type={this.getType()}
-        color="null">
+        color="null"
+        value={this.props.value} >
         {this.props.children}
       </Unit>
     );

@@ -1,6 +1,10 @@
 module.exports = global.Semantify = {
+  Breadcrumb: require('./lib/collections/breadcrumb.jsx'),
+
   Content: require('./lib/common/content.jsx'),
+  Menu: require('./lib/common/menu.jsx'),
   Text: require('./lib/common/text.jsx'),
+  Section: require('./lib/common/section.jsx'),
 
   Button: require('./lib/elements/button.jsx'),
   Divider: require('./lib/elements/divider.jsx'),

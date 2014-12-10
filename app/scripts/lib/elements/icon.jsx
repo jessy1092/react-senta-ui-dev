@@ -9,10 +9,6 @@ var Icon = React.createClass({
 
   mixins: [ClassGenerator, ColorSelector],
 
-  propTypes: {
-    onClick: React.PropTypes.func
-  },
-
   render: function () {
 
     var {className, color, ...other} = this.props;
@@ -21,8 +17,7 @@ var Icon = React.createClass({
       <Unit {...other}
         className={this.getClassName(defaultClassName)}
         type="icon"
-        color={this.getColor()}
-        onClick={this.props.onClick}>
+        color={this.getColor()} >
       </Unit>
     );
   }

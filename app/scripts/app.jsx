@@ -64,13 +64,13 @@ var HelloBox = React.createClass({
           <Item>123</Item>
           <Item>321</Item>
         </Items>
-        <Dropdown>
+        <Dropdown className="floating search labeled icon button">
+          <Icon className="world" />
           <Text>Shop</Text>
-          <Icon className="dropdown" />
           <div className="menu">
             <Header>Categories</Header>
-            <Item>Clohing</Item>
-            <Item>Home</Item>
+            <Item value="ad">Clohing</Item>
+            <Item value="cd">Home</Item>
           </div>
         </Dropdown>
       </Segment>

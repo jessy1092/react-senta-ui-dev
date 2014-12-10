@@ -1,13 +1,14 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
 var ColorSelector = require('../mixins/colorSelector.js');
+var TypeSelector = require('../mixins/typeSelector.js');
 var Unit = require('../common/unit.jsx');
 
-var defaultClassName = 'ui button';
+var defaultClassName = 'section';
 
-var Button = React.createClass({
+var Section = React.createClass({
 
-  mixins: [ClassGenerator, ColorSelector],
+  mixins: [ClassGenerator, ColorSelector, TypeSelector],
 
   render: function () {
 
@@ -16,7 +17,7 @@ var Button = React.createClass({
     return (
       <Unit {...other}
         className={this.getClassName(defaultClassName)}
-        type="div"
+        type={this.getType()}
         color={this.getColor()} >
         {this.props.children}
       </Unit>
@@ -24,4 +25,4 @@ var Button = React.createClass({
   }
 });
 
-module.exports = Button;
+module.exports = Section;
