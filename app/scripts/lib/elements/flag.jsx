@@ -1,6 +1,6 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
-var Unit = require('./unit.jsx');
+var Unit = require('../common/unit.jsx');
 
 var defaultClassName = 'flag';
 

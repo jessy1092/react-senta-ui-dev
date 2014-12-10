@@ -1,9 +1,9 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
 
-var defaultClassName = 'ui reveal';
+var defaultClassName = 'content';
 
-var Reveal = React.createClass({
+var Content = React.createClass({
 
   mixins: [ClassGenerator],
 
@@ -19,4 +19,4 @@ var Reveal = React.createClass({
   }
 });
 
-module.exports = Reveal;
+module.exports = Content;

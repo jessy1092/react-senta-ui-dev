@@ -1,7 +1,7 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
 var ColorSelector = require('../mixins/colorSelector.js');
-var Unit = require('./unit.jsx');
+var Unit = require('../common/unit.jsx');
 
 var defaultClassName = 'icon';
 

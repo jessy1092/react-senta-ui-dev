@@ -1,6 +1,8 @@
 module.exports = global.Semantify = {
+  Content: require('./lib/common/content.jsx'),
+  Text: require('./lib/common/text.jsx'),
+
   Button: require('./lib/elements/button.jsx'),
-  Content: require('./lib/elements/content.jsx'),
   Divider: require('./lib/elements/divider.jsx'),
   Flag: require('./lib/elements/flag.jsx'),
   Header: require('./lib/elements/header.jsx'),
@@ -18,5 +20,6 @@ module.exports = global.Semantify = {
   Item: require('./lib/views/item.jsx'),
   Items: require('./lib/views/items.jsx'),
 
-  Dimmer: require('./lib/modules/dimmer.jsx')
+  Dimmer: require('./lib/modules/dimmer.jsx'),
+  Dropdown: require('./lib/modules/dropdown.jsx')
 };

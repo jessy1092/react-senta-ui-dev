@@ -9,6 +9,8 @@ var List = require('./index.js').List;
 var Item = require('./index.js').Item;
 var Items = require('./index.js').Items;
 var Divider = require('./index.js').Divider;
+var Dropdown = require('./index.js').Dropdown;
+var Text = require('./index.js').Text;
 var Segment = require('./index.js').Segment;
 var React = require('react');
 
@@ -55,13 +57,22 @@ var HelloBox = React.createClass({
           </Item>
           <Item>
             <Icon className="alarm" />
-            <Header test="132321">Hello123</Header>
+            <Header type="link">Hello123</Header>
           </Item>
         </List>
         <Items className="link">
           <Item>123</Item>
           <Item>321</Item>
         </Items>
+        <Dropdown>
+          <Text>Shop</Text>
+          <Icon className="dropdown" />
+          <div className="menu">
+            <Header>Categories</Header>
+            <Item>Clohing</Item>
+            <Item>Home</Item>
+          </div>
+        </Dropdown>
       </Segment>
     );
   }

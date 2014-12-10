@@ -1,7 +1,7 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
 var TypeSelector = require('../mixins/typeSelector.js');
-var Unit = require('../elements/unit.jsx');
+var Unit = require('../common/unit.jsx');
 
 var defaultClassName = 'item';
 

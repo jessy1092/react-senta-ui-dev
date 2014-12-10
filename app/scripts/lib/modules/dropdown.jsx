@@ -1,9 +1,9 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
 
-var defaultClassName = 'ui reveal';
+var defaultClassName = 'ui dropdown';
 
-var Reveal = React.createClass({
+var Dropdown = React.createClass({
 
   mixins: [ClassGenerator],
 
@@ -16,7 +16,10 @@ var Reveal = React.createClass({
         {this.props.children}
       </div>
     );
+  },
+  componentDidMount: function () {
+    $(this.getDOMNode()).dropdown();
   }
 });
 
-module.exports = Reveal;
+module.exports = Dropdown;

@@ -13,7 +13,7 @@ var Unit = React.createClass({
 
     var {className, type, color, onClick, ...other} = this.props;
 
-    switch (this.props.type) {
+    switch (type) {
 
       case 'link':
         return (

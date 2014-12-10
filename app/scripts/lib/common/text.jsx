@@ -1,19 +1,22 @@
 var React = require('react');
 var ClassGenerator = require('../mixins/classGenerator.js');
 
-var defaultClassName = 'content';
+var defaultClassName = 'text';
 
-var Content = React.createClass({
+var Text = React.createClass({
 
   mixins: [ClassGenerator],
 
   render: function () {
+
+    var {className, ...other} = this.props;
+
     return (
-      <div className={this.getClassName(defaultClassName)} >
+      <div {...other} className={this.getClassName(defaultClassName)} >
         {this.props.children}
       </div>
     );
   }
 });
 
-module.exports = Content;
+module.exports = Text;
