@@ -3,9 +3,9 @@ module.exports = function (React) {
 
   var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-  var defaultClassName = 'menu';
+  var defaultClassName = 'ui form';
 
-  var Menu = React.createClass({
+  var Form = React.createClass({
 
     mixins: [ClassGenerator],
 
@@ -21,5 +21,5 @@ module.exports = function (React) {
     }
   });
 
-  return Menu;
+  return Form;
 }

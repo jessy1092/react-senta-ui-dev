@@ -5,12 +5,20 @@ React = require('react/addons');
 module.exports = global.Semantify = {
   // collections
   Breadcrumb: require('./lib/collections/breadcrumb.jsx')(React),
+  Form: require('./lib/collections/form.jsx')(React),
+  Grid: require('./lib/collections/grid.jsx')(React),
+  Menu: require('./lib/collections/menu.jsx')(React),
+  Message: require('./lib/collections/message.jsx')(React),
+  Table: require('./lib/collections/table.jsx')(React),
 
   // commons
+  Column: require('./lib/commons/column.jsx')(React),
   Content: require('./lib/commons/content.jsx')(React),
-  Menu: require('./lib/commons/menu.jsx')(React),
-  Text: require('./lib/commons/text.jsx')(React),
+  Field: require('./lib/commons/field.jsx')(React),
+  Fields: require('./lib/commons/fields.jsx')(React),
+  Row: require('./lib/commons/row.jsx')(React),
   Section: require('./lib/commons/section.jsx')(React),
+  Text: require('./lib/commons/text.jsx')(React),
 
   // elements
   Button: require('./lib/elements/button.jsx')(React),
@@ -18,6 +26,7 @@ module.exports = global.Semantify = {
   Flag: require('./lib/elements/flag.jsx')(React),
   Header: require('./lib/elements/header.jsx')(React),
   Icon: require('./lib/elements/icon.jsx')(React),
+  Image: require('./lib/elements/image.jsx')(React),
   Input: require('./lib/elements/input.jsx')(React),
   Label: require('./lib/elements/label.jsx')(React),
   List: require('./lib/elements/list.jsx')(React),
@@ -33,7 +42,12 @@ module.exports = global.Semantify = {
   Dropdown: require('./lib/modules/dropdown.jsx')(React),
 
   // views
+  Ad: require('./lib/views/advertisement.jsx')(React),
+  Card: require('./lib/views/card.jsx')(React),
+  Comment: require('./lib/views/comment.jsx')(React),
+  Comments: require('./lib/views/comments.jsx')(React),
+  Feed: require('./lib/views/feed.jsx')(React),
   Item: require('./lib/views/item.jsx')(React),
-  Items: require('./lib/views/items.jsx')(React)
-
+  Items: require('./lib/views/items.jsx')(React),
+  Statistic: require('./lib/views/statistic.jsx')(React)
 };
