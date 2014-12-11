@@ -3,13 +3,16 @@ React = require('react/addons');
 // React = global.React;
 
 module.exports = global.Semantify = {
+  // collections
   Breadcrumb: require('./lib/collections/breadcrumb.jsx')(React),
 
-  Content: require('./lib/common/content.jsx')(React),
-  Menu: require('./lib/common/menu.jsx')(React),
-  Text: require('./lib/common/text.jsx')(React),
-  Section: require('./lib/common/section.jsx')(React),
+  // commons
+  Content: require('./lib/commons/content.jsx')(React),
+  Menu: require('./lib/commons/menu.jsx')(React),
+  Text: require('./lib/commons/text.jsx')(React),
+  Section: require('./lib/commons/section.jsx')(React),
 
+  // elements
   Button: require('./lib/elements/button.jsx')(React),
   Divider: require('./lib/elements/divider.jsx')(React),
   Flag: require('./lib/elements/flag.jsx')(React),
@@ -25,9 +28,12 @@ module.exports = global.Semantify = {
   Step: require('./lib/elements/step.jsx')(React),
   Steps: require('./lib/elements/steps.jsx')(React),
 
-  Item: require('./lib/views/item.jsx')(React),
-  Items: require('./lib/views/items.jsx')(React),
-
+  // modules
   Dimmer: require('./lib/modules/dimmer.jsx')(React),
-  Dropdown: require('./lib/modules/dropdown.jsx')(React)
+  Dropdown: require('./lib/modules/dropdown.jsx')(React),
+
+  // views
+  Item: require('./lib/views/item.jsx')(React),
+  Items: require('./lib/views/items.jsx')(React)
+
 };
