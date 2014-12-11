@@ -1,28 +1,31 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
-var ColorSelector = require('../mixins/colorSelector.js');
-var TypeSelector = require('../mixins/typeSelector.js');
-var Unit = require('../common/unit.jsx');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'section';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
+  var ColorSelector  = require('../mixins/colorSelector.js')(React);
+  var TypeSelector   = require('../mixins/typeSelector.js')(React);
+  var Unit           = require('../common/unit.jsx')(React);
 
-var Section = React.createClass({
+  var defaultClassName = 'section';
 
-  mixins: [ClassGenerator, ColorSelector, TypeSelector],
+  var Section = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator, ColorSelector, TypeSelector],
 
-    var {className, color, ...other} = this.props;
+    render: function () {
 
-    return (
-      <Unit {...other}
-        className={this.getClassName(defaultClassName)}
-        type={this.getType()}
-        color={this.getColor()} >
-        {this.props.children}
-      </Unit>
-    );
-  }
-});
+      var {className, color, ...other} = this.props;
 
-module.exports = Section;
+      return (
+        <Unit {...other}
+          className={this.getClassName(defaultClassName)}
+          type={this.getType()}
+          color={this.getColor()} >
+          {this.props.children}
+        </Unit>
+      );
+    }
+  });
+
+  return Section;
+}

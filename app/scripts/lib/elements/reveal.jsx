@@ -1,22 +1,25 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui reveal';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-var Reveal = React.createClass({
+  var defaultClassName = 'ui reveal';
 
-  mixins: [ClassGenerator],
+  var Reveal = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator],
 
-    var {className, ...other} = this.props;
+    render: function () {
 
-    return (
-      <div {...other} className={this.getClassName(defaultClassName)} >
-        {this.props.children}
-      </div>
-    );
-  }
-});
+      var {className, ...other} = this.props;
 
-module.exports = Reveal;
+      return (
+        <div {...other} className={this.getClassName(defaultClassName)} >
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  return Reveal;
+}

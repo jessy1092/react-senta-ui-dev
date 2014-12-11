@@ -1,25 +1,28 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui dropdown';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-var Dropdown = React.createClass({
+  var defaultClassName = 'ui dropdown';
 
-  mixins: [ClassGenerator],
+  var Dropdown = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator],
 
-    var {className, ...other} = this.props;
+    render: function () {
 
-    return (
-      <div {...other} className={this.getClassName(defaultClassName)} >
-        {this.props.children}
-      </div>
-    );
-  },
-  componentDidMount: function () {
-    $(this.getDOMNode()).dropdown();
-  }
-});
+      var {className, ...other} = this.props;
 
-module.exports = Dropdown;
+      return (
+        <div {...other} className={this.getClassName(defaultClassName)} >
+          {this.props.children}
+        </div>
+      );
+    },
+    componentDidMount: function () {
+      $(this.getDOMNode()).dropdown();
+    }
+  });
+
+  return Dropdown;
+}

@@ -12,7 +12,7 @@ var Divider = require('./index.js').Divider;
 var Dropdown = require('./index.js').Dropdown;
 var Text = require('./index.js').Text;
 var Segment = require('./index.js').Segment;
-var React = require('react');
+// var React = require('react');
 
 var HelloBox = React.createClass({
 

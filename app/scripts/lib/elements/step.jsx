@@ -1,22 +1,25 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'step';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-var Step = React.createClass({
+  var defaultClassName = 'step';
 
-  mixins: [ClassGenerator],
+  var Step = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator],
 
-    var {className, ...other} = this.props;
+    render: function () {
 
-    return (
-      <div {...other} className={this.getClassName(defaultClassName)} >
-        {this.props.children}
-      </div>
-    );
-  }
-});
+      var {className, ...other} = this.props;
 
-module.exports = Step;
+      return (
+        <div {...other} className={this.getClassName(defaultClassName)} >
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  return Step;
+}

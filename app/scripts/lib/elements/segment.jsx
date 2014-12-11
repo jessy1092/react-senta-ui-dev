@@ -1,26 +1,29 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
-var ColorSelector = require('../mixins/colorSelector.js');
-var Unit = require('../common/unit.jsx');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui segment';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
+  // var ColorSelector = require('../mixins/colorSelector.js');
+  var Unit = require('../common/unit.jsx')(React);
 
-var Segment = React.createClass({
+  var defaultClassName = 'ui segment';
 
-  mixins: [ClassGenerator, ColorSelector],
+  var Segment = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator],
 
-    var {className, color, ...other} = this.props;
+    render: function () {
 
-    return (
-      <Unit {...other}
-        className={this.getClassName(defaultClassName)}
-        type="div"
-        color={this.getColor()} >
-      </Unit>
-    );
-  }
-});
+      var {className, color, ...other} = this.props;
 
-module.exports = Segment;
+      return (
+        <Unit {...other}
+          className={this.getClassName(defaultClassName)}
+          type="div"
+           >
+        </Unit>
+      );
+    }
+  });
+
+  return Segment;
+}

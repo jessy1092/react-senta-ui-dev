@@ -1,27 +1,31 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
-var ColorSelector = require('../mixins/colorSelector.js');
-var Unit = require('../common/unit.jsx');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui button';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
+  var ColorSelector  = require('../mixins/colorSelector.js')(React);
+  var Unit           = require('../common/unit.jsx')(React);
 
-var Button = React.createClass({
+  var defaultClassName = 'ui button';
 
-  mixins: [ClassGenerator, ColorSelector],
+  var Button = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator, ColorSelector],
 
-    var {className, color, ...other} = this.props;
+    render: function () {
 
-    return (
-      <Unit {...other}
-        className={this.getClassName(defaultClassName)}
-        type="div"
-        color={this.getColor()} >
-        {this.props.children}
-      </Unit>
-    );
-  }
-});
+      var {className, color, ...other} = this.props;
 
-module.exports = Button;
+      return (
+        <Unit {...other}
+          className={this.getClassName(defaultClassName)}
+          type="div"
+          color={this.getColor()} >
+          {this.props.children}
+        </Unit>
+      );
+    }
+  });
+
+  return Button;
+}
+

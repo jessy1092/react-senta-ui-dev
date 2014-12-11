@@ -1,22 +1,25 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui loader';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-var Loader = React.createClass({
+  var defaultClassName = 'ui loader';
 
-  mixins: [ClassGenerator],
+  var Loader = React.createClass({
 
-  render: function () {
+    mixins: [ClassGenerator],
 
-    var {className, ...other} = this.props;
+    render: function () {
 
-    return (
-      <div {...other} className={this.getClassName(defaultClassName)} >
-        {this.props.children}
-      </div>
-    );
-  }
-});
+      var {className, ...other} = this.props;
 
-module.exports = Loader;
+      return (
+        <div {...other} className={this.getClassName(defaultClassName)} >
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  return Loader;
+}

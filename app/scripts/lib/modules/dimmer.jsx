@@ -1,19 +1,22 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui dimmer';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-var Dimmer = React.createClass({
+  var defaultClassName = 'ui dimmer';
 
-  mixins: [ClassGenerator],
+  var Dimmer = React.createClass({
 
-  render: function () {
-    return (
-      <div className={this.getClassName(defaultClassName)} >
-        {this.props.children}
-      </div>
-    );
-  }
-});
+    mixins: [ClassGenerator],
 
-module.exports = Dimmer;
+    render: function () {
+      return (
+        <div className={this.getClassName(defaultClassName)} >
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  return Dimmer;
+}

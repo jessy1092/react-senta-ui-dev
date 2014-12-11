@@ -1,19 +1,22 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'ui divider';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
 
-var Divider = React.createClass({
+  var defaultClassName = 'ui divider';
 
-  mixins: [ClassGenerator],
+  var Divider = React.createClass({
 
-  render: function () {
-    return (
-      <div className={this.getClassName(defaultClassName)} >
-        {this.props.children}
-      </div>
-    );
-  }
-});
+    mixins: [ClassGenerator],
 
-module.exports = Divider;
+    render: function () {
+      return (
+        <div className={this.getClassName(defaultClassName)} >
+          {this.props.children}
+        </div>
+      );
+    }
+  });
+
+  return Divider;
+}

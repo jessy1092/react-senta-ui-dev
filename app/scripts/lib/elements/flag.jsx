@@ -1,30 +1,33 @@
-var React = require('react');
-var ClassGenerator = require('../mixins/classGenerator.js');
-var Unit = require('../common/unit.jsx');
+"use strict";
+module.exports = function (React) {
 
-var defaultClassName = 'flag';
+  var ClassGenerator = require('../mixins/classGenerator.js')(React);
+  var Unit           = require('../common/unit.jsx')(React);
 
-var Flag = React.createClass({
+  var defaultClassName = 'flag';
 
-  mixins: [ClassGenerator],
+  var Flag = React.createClass({
 
-  propTypes: {
-    onClick: React.PropTypes.func
-  },
+    mixins: [ClassGenerator],
 
-  render: function () {
+    propTypes: {
+      onClick: React.PropTypes.func
+    },
 
-    var {className, ...other} = this.props;
+    render: function () {
 
-    return (
-      <Unit {...other}
-        className={this.getClassName(defaultClassName)}
-        type="icon"
-        color="null"
-        onClick={this.props.onClick} >
-      </Unit>
-    );
-  }
-});
+      var {className, ...other} = this.props;
 
-module.exports = Flag;
+      return (
+        <Unit {...other}
+          className={this.getClassName(defaultClassName)}
+          type="icon"
+          color="null"
+          onClick={this.props.onClick} >
+        </Unit>
+      );
+    }
+  });
+
+  return Flag;
+}
